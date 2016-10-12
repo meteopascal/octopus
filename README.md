@@ -44,10 +44,10 @@ d.add_site(monsite)
 ```
 
 exemple de selection par la localisation
-latwidth, lonwidth par défaut fixées à 3
+latwidth, lonwidth optionnels par défaut fixées à 3
 
 ```
 lat = 46
 lon = 2
-d.get_by_loc(lat, lon[, latwidth, lonwidth])
+d.get_by_loc(lat, lon, latwidth=3, lonwidth=3)
 ```

@@ -6,6 +6,16 @@ sqlite et d'afficher les résultats.
 Pour récupérer la base (230 Ko):
     cp ~lamboleyp/dev/octopus/Sites.sqlite ./
     
+## lancement du serveur
+```
+python3 server.py
+```
+Puis lancer un navigateur sur
+```
+http://localhost:8080
+```
+
+
 ## base de données
 exemple d'instanciation de la classe `SitesDb`
 ```

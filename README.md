@@ -32,3 +32,12 @@ monsite = {'cccc':'toul',
 'id_radar_model':5} 
 d.add_site(monsite)
 ```
+
+exemple de selection par la localisation
+latwidth, lonwidth par défaut fixées à 3
+
+```
+lat = 46
+lon = 2
+d.get_by_loc(lat, lon[, latwidth, lonwidth])
+```

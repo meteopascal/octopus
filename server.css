@@ -1,0 +1,13 @@
+table {
+  font-size: 12;
+  font-family: verdana;
+}
+
+td.even {
+  color: blueviolet;
+}
+
+td.odd {
+  color: orange;
+}
+

@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sqlite3
 
+
 class SitesDb(object):
-	'''class de gestion de la bdd Sites
-	'''
+	"""Classe de gestion de la bdd Sites."""
 	def __init__(self, path):
 		self.db = sqlite3.connect(path)
 		self.cursor = self.db.cursor()

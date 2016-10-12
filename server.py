@@ -6,12 +6,15 @@
 from twisted.web import server, resource
 from twisted.internet import reactor, endpoints
 import pprint
+from db import SitesDb
 
 # external html form
 FORMFILE = 'request_form.html'
 
 # output encoding
 ENCODING = 'utf-8'
+
+base = SitesDb('Sites.sqlite')
 
 
 class RequestServer(resource.Resource):
@@ -37,12 +40,20 @@ class RequestServer(resource.Resource):
             ymax=float(request.args.get(b'ymax', [25])[0]),
         )
         request.setHeader(b"content-type", b"text/html")
+        return self.contents(criterium)
+
+    def contents(self, criterium):
         content = '<html><body>'
         content += pprint.pformat(criterium)
         content += '</body></html>'
         # return content.encode("ascii")
         return content.encode('utf-8')
 
+if False:
+    endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(RequestServer()))
+    reactor.run()
 
-endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(RequestServer()))
-reactor.run()
+res = base.getall()
+for line in res:
+    print()
+    pprint.pprint(line)

@@ -10,7 +10,7 @@ Pour récupérer la base (230 Ko):
 ```
 python3 server.py
 ```
-Puis lancer un navigateur sur [localhost, port 8080](http://localhost:8080)
+Puis lancer un navigateur sur [http://localhost::8080](http://localhost:8080)
 
 
 ## base de données

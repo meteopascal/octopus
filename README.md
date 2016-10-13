@@ -5,7 +5,20 @@ sqlite et d'afficher les résultats.
 
 Pour récupérer la base (230 Ko):
     cp ~lamboleyp/dev/octopus/Sites.sqlite ./
-    
+
+
+## git
+On utilise un dépôt local (le ssh vers github est filtré...)
+```
+git remote set-url origin ~lamboleyp/gitrep/octopus.git
+```
+
+ce qui nous oblige à redonner les droit après un commit:
+```
+chmod -Rc ug+w ~lamboleyp/gitrep/*.git
+```
+
+
 ## lancement du serveur
 ```
 python3 server.py
@@ -14,12 +27,14 @@ Puis lancer un navigateur sur [http://localhost::8080](http://localhost:8080)
 
 
 ## base de données
-exemple d'instanciation de la classe `SitesDb`
+
+Exemple d'instanciation de la classe `SitesDb`
 ```
 from db import SitesDb
 d = SitesDb("Sites.sqlite")
 ```
-exemple d'insertion d'un nouveau site
+
+Exemple d'insertion d'un nouveau site
 ```
 monsite = dict(
     cccc='toul',
@@ -41,9 +56,7 @@ monsite = dict(
 d.add_site(monsite)
 ```
 
-exemple de selection par la localisation
-latwidth, lonwidth optionnels par défaut fixées à 3
-
+Exemple de sélection par la localisation (latwidth, lonwidth optionnels, par défaut fixées à 3
 ```
 lat = 46
 lon = 2

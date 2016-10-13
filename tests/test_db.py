@@ -1,6 +1,12 @@
 # import pytest
 from db import SitesDb
 
+"""
+Lancement des tests:
+    cd octopus   # PAS octopus/tests
+    pytest
+"""
+
 db_path = 'tests/fixtures.sqlite'
 d_read_only = SitesDb(db_path)
 

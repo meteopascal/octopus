@@ -3,6 +3,7 @@ table {
   font-family: verdana;
 }
 
+/* en CSS 3, les sélecteurs even et odd existent ! */
 td.even {
   color: blueviolet;
 }

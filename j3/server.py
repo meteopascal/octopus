@@ -3,9 +3,9 @@
 
 # http://localhost:8080
 
-from twisted.web import server, resource
 from twisted.internet import reactor, endpoints
-import pprint
+from twisted.web import server, resource
+
 from db import SitesDb
 
 # external html form
@@ -26,7 +26,7 @@ class RequestServer(resource.Resource):
         super(RequestServer, self).__init__()
         self.base = SitesDb(basefile)
 
-    # noinspection PyPep8Naming
+    # noinspection PyPep8Naming,PyMethodMayBeStatic
     def render_GET(self, request):
         """La demande : un formulaire html lu dans un fichier externe."""
         request.setHeader(b"content-type", b"text/html")
@@ -41,15 +41,14 @@ class RequestServer(resource.Resource):
            * on les met en forme en html
         """
         # pprint.pprint(request.__dict__)
-        criterium = dict(
-            xmin=float(request.args.get(b'xmin', [56])[0]),
-            xmax=float(request.args.get(b'xmax', [60])[0]),
-            ymin=float(request.args.get(b'ymin', [21])[0]),
-            ymax=float(request.args.get(b'ymax', [25])[0]),
-        )
+        criterium = dict(xmin=float(request.args.get(b'xmin', [56])[0]),
+                         xmax=float(request.args.get(b'xmax', [60])[0]),
+                         ymin=float(request.args.get(b'ymin', [21])[0]),
+                         ymax=float(request.args.get(b'ymax', [25])[0]), )
         request.setHeader(b"content-type", b"text/html")
         return self.contents(criterium)
 
+    # noinspection PyMethodMayBeStatic
     def table(self, sites):
         """Return html code for the list of Sites in a Table."""
         fields = set(sites[0].keys())
@@ -82,6 +81,7 @@ class RequestServer(resource.Resource):
         return self.base.get_by_loc(y, x, dy, dx)
         # return base.get_all()
 
+    # noinspection PyMethodMayBeStatic
     def css(self):
         txt = "<style type='text/css'>"
         txt += open(CSS_FILE).read()
@@ -90,7 +90,7 @@ class RequestServer(resource.Resource):
 
     def contents(self, criterium):
         contents = '<html><body>'
-        title='extrait de la base'
+        title = 'extrait de la base'
         contents += '<head><meta charset="UTF-8"><title>{}</title></head>'.format(title)
         contents += self.css()
         sites = self.select(criterium)

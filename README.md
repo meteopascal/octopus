@@ -4,7 +4,9 @@ Serveur permettant d'interroger une base
 sqlite et d'afficher les résultats.
 
 Pour récupérer la base (230 Ko):
-    cp ~lamboleyp/dev/octopus/Sites.sqlite ./
+```
+cp ~lamboleyp/dev/octopus/Sites.sqlite ./
+```
 
 
 ## git
@@ -56,7 +58,7 @@ monsite = dict(
 d.add_site(monsite)
 ```
 
-Exemple de sélection par la localisation (latwidth, lonwidth optionnels, par défaut fixées à 3
+Exemple de sélection par la localisation (latwidth, lonwidth optionnels, par défaut fixées à 3)
 ```
 lat = 46
 lon = 2

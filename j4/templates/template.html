@@ -1,0 +1,16 @@
+<title>{% block title %}{% endblock %}</title>
+<p>My string: {{my_string}}</p>
+<table border="1">
+	<tr>
+		{% for k in pandaobject.keys() %}
+		<th>{{k}}</th>
+		{% endfor %}
+	</tr>
+	{% for row in pandaobject.iterrows() %}
+	<tr>
+		{% for k in pandaobject.keys() %}
+		<td> {{row[1][k]}}</td>
+		{% endfor %}
+	</tr>
+	{% endfor %}
+</table>

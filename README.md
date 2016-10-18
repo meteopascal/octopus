@@ -3,6 +3,8 @@
 Serveur permettant d'interroger une base
 sqlite et d'afficher les résultats.
 
+Stage Python du 10 au 13 octobre 2016.
+
 
 ### git
 

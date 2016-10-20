@@ -16,7 +16,7 @@ Pour l'accès par ssh, envoyez-moi votre clef publique par mail, en vous inspira
 ```
 mail -s 'accès github à octopus' pascal.lamboley@meteo.fr < ~/.ssh/id_rsa.pub
 ```
- 
+
 On a utilisé pendant le stage un dépôt local (le ssh sortant est filtré à l'ENM...)
 
 Il a fallu changer l'url de notre copie de travail, qui pointait sur github:
@@ -34,7 +34,7 @@ chmod -Rc ug+w ~lamboleyp/gitrep/*.git
 ```
 python3 server.py
 ```
-Puis lancer un navigateur sur [http://localhost::8080](http://localhost:8080)
+Puis lancer un navigateur sur [http://localhost:8080](http://localhost:8080)
 
 
 ### base de données (version j3)
@@ -68,7 +68,7 @@ monsite = dict(
     nom_fichier_altitudeterrain='toto',
     DPOL_hardware_mode=54,
     indicateur_panne=0,
-) 
+)
 d.add_site(monsite)
 ```
 

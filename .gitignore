@@ -1,5 +1,3 @@
-Sites.sqlite
-
 *.pyc
 __pycache__/
 

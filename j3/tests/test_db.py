@@ -18,4 +18,4 @@ def test_get_by_id_fields():
 
 
 def test_get_all():
-    assert len(d_read_only.get_all()) == 39
+    assert len(d_read_only.get_all()) == 23

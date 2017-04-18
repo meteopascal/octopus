@@ -6,7 +6,7 @@
 from twisted.internet import reactor, endpoints
 from twisted.web import server, resource
 
-from db import SitesDb
+from .db import SitesDb
 
 # external html form
 FORMFILE = 'request_form.html'

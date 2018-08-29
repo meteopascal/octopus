@@ -28,7 +28,7 @@ assert any([pprint, os, Table, MetaData, ])
 def is_ipython():
     """Tell if we are in iPython."""
     try:
-        assert __IPYTHON__
+        assert __IPYTHON__  # @UndefinedVariable
         return True
     except NameError:
         pass

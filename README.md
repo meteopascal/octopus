@@ -82,7 +82,8 @@ d.get_by_loc(lat, lon, latwidth=3, lonwidth=3)
 ### jour 4
 J'ai mis là les deux essais réalisés:
   * un serveur `flask`, qui lit des données en .csv via `pandas`, et les met en forme avec `jinja2`.
-  * un accès générique à la base, qu'elle soit sous `MySQL`, `PostgreSQL` ou `Sqlite`, grâce à l'ORM `SQLAlchemy`.
+  * un accès générique à la base, qu'elle soit sous `MySQL`, `PostgreSQL` ou `Sqlite`, grâce à l'ORM
+   `SQLAlchemy`.
 
 Le fichier `requirements.txt` est sans aucun doute beaucoup trop complet, mais il contient _aussi_
 le nécessaire : on y retrouvera le nom de la bibliothèque à utiliser pour l'installer.

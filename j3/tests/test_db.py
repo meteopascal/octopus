@@ -1,5 +1,7 @@
-# import pytest
-from db import SitesDb
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from ..db import SitesDb
 
 """
 Lancement des tests:
